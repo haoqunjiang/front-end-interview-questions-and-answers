@@ -109,3 +109,20 @@
     + [LeetCode](https://leetcode.com/)
     + [careercup](http://www.careercup.com/)
     + [结构之法 算法之道](http://blog.csdn.net/v_JULY_v)
+
+## 答案
+
+### HTML DOCTYPE 声明
+
+[HTML 4.01 和 XHTML 都基于 SMGL](http://www.w3.org/TR/REC-html40/intro/sgmltut.html)，所以需要在文档开头声明引用一个 DTD。
+
+HTML 和 XHTML 的 DOCTYPE 声明都有 strict/transitional/frameset 三种模式。
+strict 模式禁止所有 presetational or deprecated elements（例如 font 标签）以及 frameset 标签；transitional 模式只禁止了 frameset 标签；frameset 模式与 transitional 模式相同，并且允许 frameset 标签。
+
+[HTML 5 标准放弃了与 SGML 的兼容](http://www.w3.org/TR/html5-diff/#doctype)，所以其实不需要在文档开头引用 DTD，保留 DOCTYPE 是为了保证与旧浏览器的兼容。之所以选用 `<!DOCTYPE html>` 是因为[这个声明格式在当前所有的浏览器（IE、FF、Opera、Safar 等，即使没有实现 HTML 5）下都会以标准模式渲染](http://ejohn.org/blog/html5-doctype/)。
+
+对于 XHTML 页面，只要 `Content-Type` 用了 `application/xhtml+xml` MIME 类型，就可以不声明 DOCTYPE。不过 IE 8- 不支持这个 `Content-Type` 取值，所以其实并没有什么用……
+
+其他情况下，不声明 DOCTYPE 的话，浏览器会以 Quicks Mode 渲染页面。IE 9- 的 Quicks Mode 是指 IE 5.5 的渲染模式，不过 IE 10+ 和其他浏览器的 Quicks Mode 则是从 A类墨色 Standards Mode 演化而来，WHATWG 有一个 [Quicks Mode 的标准文档](https://quirks.spec.whatwg.org/)。
+
+更详细的信息可以参考这篇文章：[Activating Browser Modes with Doctype](https://hsivonen.fi/doctype/)。
