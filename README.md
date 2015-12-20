@@ -3,22 +3,28 @@
 包括笔者本人遇到过的、网上见到过的以及自己想出来的各类前端相关的面试题。
 
 部分参考文献如下：
+
 - [Front-end Job Interview Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions)
 - [百度 FEX 团队面试题](https://github.com/fex-team/interview-questions)
 - [阿里航旅事业部前端开发校招（电面）面试题](https://github.com/jayli/jayli.github.com/issues/19)
 - [That JS Dude](http://thatjsdude.com/interview/index.html)
+- [前端开发面试题](https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers)
+- [FE-Interview](https://github.com/qiu-deqing/FE-interview)
+- [如何面试 JS 开发工程师](http://www.zhihu.com/question/37441607)
 
 ## 题目列表
 
 - HTML
-    + DOCTYPE 声明的取值与区别
-    + 常见的 meta 标签有哪些？移动端呢？
-    + 关于 HTML 语义化知道哪些？
-    + 是否有关注 HTML 标准的演进？比较关注哪些方面？能否举一些例子？
+    + [DOCTYPE 声明的作用、取值与区别](#html-doctype-声明)
+    + [常见的 meta 标签有哪些？移动端呢？](#常见的-meta-标签)
+    + [关于 HTML 语义化知道哪些？](#html-语义化)
+    + [是否有关注 HTML 标准的演进？比较关注哪些方面？能否举一些例子？](#html-标准)
 - CSS
-    + 盒模型、IE 6/7 与现代浏览器的区别、如何兼容
-    + BFC/IFC/Flexbox 的概念
+    + CSS 有几种引入方式？各自的优缺点？
+    + [盒模型、IE 6/7 与现代浏览器的区别、如何兼容](#css-盒模型)
+    + BFC 的概念
     + containing block 和 stacking context 的概念和计算
+    + [`position: absolute` 和 `float` 有什么区别](#absolute-和-float-的区别)
     + position 和 display 的取值和各自的意思和用法
     + 如何清除浮动？为什么要清除浮动？
     + 不同浏览器上的默认样式，如何处理？（normalize/sanitize）
@@ -33,7 +39,7 @@
     + 用过哪些 CSS 方面的工具
     + 随便谈谈 CSS 工程化
 - JavaScript & DOM
-    + 有哪些基本类型
+    + [JavaScript 有哪些基本类型](#javascript-基本类型)
     + 区分不同类型的方法有哪些，各有什么问题
     + 闭包的概念 & 用途
     + `apply` 和 `call` 的用途和区别
@@ -84,29 +90,37 @@
 - 其他
     + 会不会用 ps 扣图，png、jpg、gif 这些图片格式解释一下，分别什么时候用。是否了解webp
     + 是否了解开源的工具 bower、npm、yeoman、grunt、gulp，有无用过，有无写过，一个 npm 的包里的 package.json 具备的必要的字段都有哪些（名称、版本号，依赖）
+    + 如何判定访问者的身份是同一人？除了 cookies 还有什么替代品？
 - 手写代码
     + walkTheDOM 函数，从 `<body>` 标签起，遍历所有节点并打印标签名
+    + addClass
     + 实现一个简单的 pub-sub 库
     + 实现 `_.flatten()`
     + object deep clone
     + isPrime
-    + quicksort
-    + mergesort
+    + quick sort
+    + merge sort
     + binary search
     + throttle & debounce
     + 实现 `Object.create()`（不用完全遵循标准，实现蝴蝶书上的版本就够了）
-    + Function.prototype.bind
+    + `Function.prototype.bind`
+    + CSS 实现元素的水平垂直居中
     + 实现一个圣杯布局
     + carousel 组件
     + 自动补全组件
     + overlay 组件
     + popup 组件
+    + drag & drop 组件，分别用 jQuery、MVVM、React 和 RxJS 实现一遍
+    + [一小时之内写一个扫雷游戏](#一小时之内写一个扫雷游戏)
+- 代码实现思路
+    + 如果要你实现一个 AMD 加载器，你将如何实现？讲一下思路和需要注意的点，最好有伪代码
+    + Sizzles （jQuery 的选择器模块）的实现思路
 - 算法题
     + topK
     + 翻转单链表
     + 反转二叉树
     + 单向列表判断是否有环
-    + [LeetCode](https://leetcode.com/)
+    + [LeetCode](#leetcode)
     + [careercup](http://www.careercup.com/)
     + [结构之法 算法之道](http://blog.csdn.net/v_JULY_v)
 
@@ -116,13 +130,49 @@
 
 [HTML 4.01 和 XHTML 都基于 SMGL](http://www.w3.org/TR/REC-html40/intro/sgmltut.html)，所以需要在文档开头声明引用一个 DTD。
 
+在 HTML 5 中，DOCTYPE 不区分大小写；不过对于 XHTML、Polyglot HTML，`DOCTYPE` 这几个字母需要大写。
+
 HTML 和 XHTML 的 DOCTYPE 声明都有 strict/transitional/frameset 三种模式。
 strict 模式禁止所有 presetational or deprecated elements（例如 font 标签）以及 frameset 标签；transitional 模式只禁止了 frameset 标签；frameset 模式与 transitional 模式相同，并且允许 frameset 标签。
 
-[HTML 5 标准放弃了与 SGML 的兼容](http://www.w3.org/TR/html5-diff/#doctype)，所以其实不需要在文档开头引用 DTD，保留 DOCTYPE 是为了保证与旧浏览器的兼容。之所以选用 `<!DOCTYPE html>` 是因为[这个声明格式在当前所有的浏览器（IE、FF、Opera、Safar 等，即使没有实现 HTML 5）下都会以标准模式渲染](http://ejohn.org/blog/html5-doctype/)。
+[HTML 5 标准放弃了与 SGML 的兼容](http://www.w3.org/TR/html5-diff/#doctype)，所以其实不需要在文档开头引用 DTD，保留 DOCTYPE 是为了保证与旧浏览器的兼容。之所以选用 `<!DOCTYPE html>` 是因为[这个声明格式在当前所有的浏览器（IE、FF、Opera、Safar 等，即使没有实现 HTML 5）下都会以标准模式渲染](http://ejohn.org/blog/html5-doctype/)并且长度最短。
 
-对于 XHTML 页面，只要 `Content-Type` 用了 `application/xhtml+xml` MIME 类型，就可以不声明 DOCTYPE。不过 IE 8- 不支持这个 `Content-Type` 取值，所以其实并没有什么用……
+对于 XHTML 页面，只要 `Content-Type` 用了 `application/xhtml+xml` MIME 类型，就可以不声明 DOCTYPE。不过 IE 8- 不支持这个 `Content-Type` 取值，会被当成资源文件而弹出下载框，所以目前来说其实并没有什么用……
 
-其他情况下，不声明 DOCTYPE 的话，浏览器会以 Quicks Mode 渲染页面。IE 9- 的 Quicks Mode 是指 IE 5.5 的渲染模式，不过 IE 10+ 和其他浏览器的 Quicks Mode 则是从 A类墨色 Standards Mode 演化而来，WHATWG 有一个 [Quicks Mode 的标准文档](https://quirks.spec.whatwg.org/)。
+其他情况下，不声明 DOCTYPE 的话，浏览器会以 Quicks Mode 渲染页面。IE 9- 的 Quicks Mode 是指 IE 5.5 的渲染模式，不过 IE 10+ 和其他浏览器的 Quicks Mode 则是从 Almost Standards Mode 演化而来，WHATWG 有一个 [Quicks Mode 的标准文档](https://quirks.spec.whatwg.org/)。
 
 更详细的信息可以参考这篇文章：[Activating Browser Modes with Doctype](https://hsivonen.fi/doctype/)。
+
+### 常见的 meta 标签
+
+### HTML 语义化
+
+### Reflow and Repaint
+
+参考[这篇文章](http://www.sitepoint.com/10-ways-minimize-reflows-improve-performance/)。
+
+### LeetCode
+
+LeetCode 地址为 [https://leetcode.com/](https://leetcode.com/)。
+[LeetCode 题解](https://www.gitbook.com/book/siddontang/leetcode-solution/details) 这本电子书中有很详尽的 C++ 版本的题解。
+
+
+
+
+### JavaScript 基本类型
+
+根据 ES 2015 标准，JavaScript 的基本类型一共有 7 种，分别是 Undefined、Null、Boolean、String、Symbol、Number 以及 Object，其中 Symbol 是 ES 2015 标准中新增的基本类型。
+
+
+
+
+### absolute 和 float 的区别
+
+两者都会脱离文档流，前者会覆盖文档流中的元素，后者仍然占据位置
+
+
+
+### 一小时之内写一个扫雷游戏
+
+来源：[http://rkoutnik.com/articles/How-I-Interview.html](http://rkoutnik.com/articles/How-I-Interview.html)
+思路/代码：[http://waitingfortheelevator.com/html-5-minesweeper-in-an-hour/](http://waitingfortheelevator.com/html-5-minesweeper-in-an-hour/)
