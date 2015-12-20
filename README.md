@@ -2,7 +2,7 @@
 
 包括笔者本人遇到过的、网上见到过的以及自己想出来的各类前端相关的面试题。
 
-部分参考文献如下：
+部分参考文章如下：
 
 - [Front-end Job Interview Questions](https://github.com/h5bp/Front-end-Developer-Interview-Questions)
 - [百度 FEX 团队面试题](https://github.com/fex-team/interview-questions)
@@ -11,6 +11,7 @@
 - [前端开发面试题](https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers)
 - [FE-Interview](https://github.com/qiu-deqing/FE-interview)
 - [如何面试 JS 开发工程师](http://www.zhihu.com/question/37441607)
+
 
 ## 题目列表
 
@@ -124,7 +125,9 @@
     + [careercup](http://www.careercup.com/)
     + [结构之法 算法之道](http://blog.csdn.net/v_JULY_v)
 
+
 ## 答案
+
 
 ### HTML DOCTYPE 声明
 
@@ -143,9 +146,16 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 
 更详细的信息可以参考这篇文章：[Activating Browser Modes with Doctype](https://hsivonen.fi/doctype/)。
 
+
 ### 常见的 meta 标签
 
+可以参考 FEX 的[这篇文章](http://fex.baidu.com/blog/2014/10/html-head-tags/)，不过其中有部分已经过时了，比如 `viewport` 的 `minimal-ui` 属性在 iOS 8 中已经被去掉了
+
+
 ### HTML 语义化
+
+[HTML5 Doctor](http://html5doctor.com/)
+
 
 ### Reflow and Repaint
 
@@ -154,9 +164,8 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 ### LeetCode
 
 LeetCode 地址为 [https://leetcode.com/](https://leetcode.com/)。
-[LeetCode 题解](https://www.gitbook.com/book/siddontang/leetcode-solution/details) 这本电子书中有很详尽的 C++ 版本的题解。
 
-
+[《LeetCode 题解》](https://www.gitbook.com/book/siddontang/leetcode-solution/details) 这本电子书中有很详尽的 C++ 版本的题解。
 
 
 ### JavaScript 基本类型
@@ -164,15 +173,13 @@ LeetCode 地址为 [https://leetcode.com/](https://leetcode.com/)。
 根据 ES 2015 标准，JavaScript 的基本类型一共有 7 种，分别是 Undefined、Null、Boolean、String、Symbol、Number 以及 Object，其中 Symbol 是 ES 2015 标准中新增的基本类型。
 
 
-
-
 ### absolute 和 float 的区别
 
-两者都会脱离文档流，前者会覆盖文档流中的元素，后者仍然占据位置
-
+两者都会脱离 normal flow（注意不要翻译成文档流），前者会覆盖 normal flow 中的元素，后者仍然占据位置
 
 
 ### 一小时之内写一个扫雷游戏
 
 来源：[http://rkoutnik.com/articles/How-I-Interview.html](http://rkoutnik.com/articles/How-I-Interview.html)
+
 思路/代码：[http://waitingfortheelevator.com/html-5-minesweeper-in-an-hour/](http://waitingfortheelevator.com/html-5-minesweeper-in-an-hour/)
