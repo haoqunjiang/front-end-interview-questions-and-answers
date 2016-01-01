@@ -46,10 +46,13 @@
     + `apply` 和 `call` 的用途和区别
     + 原型继承的概念， `prototype` 和 `__proto__` 的区别
     + 是否碰到过内存泄露？能否说一下引起内存泄露的常见原因（网上大部分文章都是跟 IE 相关的，其实没什么必要了解，闭包方面有必要知道）？有什么工具可以调试？
+    + JavaScript 设计模式知道哪些？Proxy 模式怎么用？
+    + ES6 是否有了解
     + JavaScript 模块化
         * 常见规范
         * 工具
         * 实现原理
+ - DOM
     + DOM 的事件机制
         * 冒泡与捕获的概念，如何阻止冒泡
         * Delegation
@@ -58,12 +61,10 @@
     + ajax 请求中 readyState 有哪些状态（这个问题我感觉太不常考了……但既然见到过那就收录进来了）
     + ajax 跨域
         * 怎样算是跨域？
-        * 跨域的方法有哪些？实现原理是什么？兼容性如何？各自有什么缺点？
+        * [跨域的方法有哪些？实现原理是什么？兼容性如何？各自有什么缺点？](#ajax-跨域)
         * JSONP 如果页面编码和被请求的资源编码不一致如何处理
-    + 服务器端消息推送有哪些方法？实现原理？兼容性？缺点？
+    + [服务器端消息推送有哪些方法？实现原理？兼容性？缺点？](#服务器端推送)
     + jQuery.ready() 实际上是 DOM 中的什么事件？
-    + JavaScript 设计模式知道哪些？Proxy 模式怎么用？
-    + ES6 是否有了解
 - 前端性能优化
     + 雅虎 24 条，说出越多越好
     + 是否听说过 BigPipe（这个我自己加的，没见人问过）
@@ -73,17 +74,28 @@
     + 用过什么性能分析的工具
 - 前端安全
     + XSS 的概念、知道哪些解决办法（常规的就行，不必太深入）
+    + `escape` / `encodeURI` / `encodeURIComponent` 的区别
     + CSRF 攻击的概念、防御手段
 - 后端
-    + 讲讲 session 的实现原理
+    + 讲讲 session 的实现原理，cookies 和 session 的关系，以及可否不用 cookies 实现
+    + 多台服务器之间该如何共享 session
     + 讲讲 RESTful
 - NodeJS
     + callback hell 以及目前的解决方案
+    + 用过 koa 吗？thunk 是什么？（等 koa 2 正式版出来以后这个可以不用问了）
+    + 什么是事件循环？Node 中有哪些类型的函数/调用是异步的？哪些是同步的？
+    + 写过单元测试吗？用过什么库？
+    + 怎样绑定 Node 程序到 80 端口[#绑定-node-程序到-80-端口]？
+    + 有哪些方法可以让 Node 程序遇到错误后自动重启
+    + 如何实现一个 writable stream？
+- TypeScript
+    + 都说 TypeScript 的类型系统是 unsound 的，请问这个 unsound 是什么意思？具体表现在什么地方？
+    + `interface` 和 `declare class` 都可以用来描述一个类，请问这两者的区别是什么？
 - 网络
     + TCP 三次握手
         * 具体过程
         * 为什么要这么设计
-    + 说一下网络五层模型（HTTP协议从应用层到底层都基于哪些协议），HTTP 协议头字段说上来几个，缓存字段是怎么定义的，http和https的区别，在具体使用的时候有什么不一样。是否尽可能详细的掌握HTTP协议
+    + 说一下网络五层模型（HTTP 协议从应用层到底层都基于哪些协议），HTTP 协议头字段说上来几个，缓存字段是怎么定义的，http 和 https 的区别，在具体使用的时候有什么不一样。是否尽可能详细的掌握 HTTP 协议
     + HTTP 状态码
         * 1、2、3、4、5 开头分别表示什么
         * 301 和 302 的区别、为什么要区分
@@ -133,7 +145,7 @@
 
 [HTML 4.01 和 XHTML 都基于 SMGL](http://www.w3.org/TR/REC-html40/intro/sgmltut.html)，所以需要在文档开头声明引用一个 DTD。
 
-在 HTML 5 中，DOCTYPE 不区分大小写；不过对于 XHTML、Polyglot HTML，`DOCTYPE` 这几个字母需要大写。
+在 HTML 5 中，DOCTYPE 不区分大小写；不过对于 XHTML、[Polyglot HTML](http://www.w3.org/TR/html-polyglot/)，`DOCTYPE` 这几个字母需要大写。
 
 HTML 和 XHTML 的 DOCTYPE 声明都有 strict/transitional/frameset 三种模式。
 strict 模式禁止所有 presetational or deprecated elements（例如 font 标签）以及 frameset 标签；transitional 模式只禁止了 frameset 标签；frameset 模式与 transitional 模式相同，并且允许 frameset 标签。
@@ -171,6 +183,16 @@ LeetCode 地址为 [https://leetcode.com/](https://leetcode.com/)。
 ### JavaScript 基本类型
 
 根据 ES 2015 标准，JavaScript 的基本类型一共有 7 种，分别是 Undefined、Null、Boolean、String、Symbol、Number 以及 Object，其中 Symbol 是 ES 2015 标准中新增的基本类型。
+
+
+### AJAX 跨域
+
+[浅谈WEB跨域的实现（前端向）](http://www.cnblogs.com/vajoy/p/4295825.html)
+
+
+### 服务器端推送
+
+- [关于web通信技术](http://www.tony77.com/archives/431.html)
 
 
 ### absolute 和 float 的区别
