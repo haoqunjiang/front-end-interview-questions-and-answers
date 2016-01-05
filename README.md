@@ -39,12 +39,13 @@
         * 渲染性能的方面呢
     + 用过哪些 CSS 方面的工具
     + 随便谈谈 CSS 工程化
-- JavaScript & DOM
+- JavaScript
     + [JavaScript 有哪些基本类型](#javascript-基本类型)
     + 区分不同类型的方法有哪些，各有什么问题
     + 闭包的概念 & 用途
     + `apply` 和 `call` 的用途和区别
     + 原型继承的概念， `prototype` 和 `__proto__` 的区别
+    + JavaScript 如何实现继承？对象的几种创建方式？
     + 是否碰到过内存泄露？能否说一下引起内存泄露的常见原因（网上大部分文章都是跟 IE 相关的，其实没什么必要了解，闭包方面有必要知道）？有什么工具可以调试？
     + JavaScript 设计模式知道哪些？Proxy 模式怎么用？
     + ES6 是否有了解
@@ -77,7 +78,7 @@
     + `escape` / `encodeURI` / `encodeURIComponent` 的区别
     + CSRF 攻击的概念、防御手段
 - 后端
-    + 讲讲 session 的实现原理，cookies 和 session 的关系，以及可否不用 cookies 实现
+    + 讲讲 session 的实现原理，cookies 和 session 的关系，客户端禁用 cookies 后怎么使用 session？
     + 多台服务器之间该如何共享 session
     + 讲讲 RESTful
 - NodeJS
@@ -88,6 +89,8 @@
     + 怎样绑定 Node 程序到 80 端口[#绑定-node-程序到-80-端口]？
     + 有哪些方法可以让 Node 程序遇到错误后自动重启
     + 如何实现一个 writable stream？
+    + Node.js 中怎么删文件？
+    + 在 Node 中直接用 MySQL 的话，客户端一定时间没有活动的话 MySQL 会断开连接，一般怎么处理这个问题？
 - TypeScript
     + 都说 TypeScript 的类型系统是 unsound 的，请问这个 unsound 是什么意思？具体表现在什么地方？
     + `interface` 和 `declare class` 都可以用来描述一个类，请问这两者的区别是什么？
@@ -99,7 +102,10 @@
     + HTTP 状态码
         * 1、2、3、4、5 开头分别表示什么
         * 301 和 302 的区别、为什么要区分
+    + `keep-alive`
     + cookies 是干嘛的，服务器和浏览器之间的 cookies 是怎么传的，httponly 的 cookies 和可读写的 cookie 有什么区别，有无长度限制，cookies 被禁用后可以考虑用什么替代
+    + GET/POST 区别
+    + [一个页面从输入 URL 到页面加载完的过程中都发生了什么事情？越详细越好](https://github.com/alex/what-happens-when)
 - 其他
     + 会不会用 ps 扣图，png、jpg、gif 这些图片格式解释一下，分别什么时候用。是否了解webp
     + 是否了解开源的工具 bower、npm、yeoman、grunt、gulp，有无用过，有无写过，一个 npm 的包里的 package.json 具备的必要的字段都有哪些（名称、版本号，依赖）
