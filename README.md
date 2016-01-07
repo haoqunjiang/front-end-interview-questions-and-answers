@@ -143,7 +143,7 @@
   - [翻转单链表](#%E7%BF%BB%E8%BD%AC%E5%8D%95%E9%93%BE%E8%A1%A8)
   - [反转二叉树](#%E5%8F%8D%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91)
   - [单向列表判断是否有环](#%E5%8D%95%E5%90%91%E5%88%97%E8%A1%A8%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%9C%89%E7%8E%AF)
-  - [[LeetCode](https://leetcode.com/)](#leetcodehttpsleetcodecom)
+  - [LeetCode](#leetcode)
   - [careercup](#careercup)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -422,8 +422,9 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 
 ### 单向列表判断是否有环
 
-### [LeetCode](https://leetcode.com/)
+### LeetCode
 
+<https://leetcode.com/>
 [《LeetCode 题解》](https://www.gitbook.com/book/siddontang/leetcode-solution/details) 这本电子书中有很详尽的 C++ 版本的题解。
 
 ### careercup
