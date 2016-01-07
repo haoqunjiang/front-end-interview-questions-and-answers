@@ -14,7 +14,7 @@
 - [FE-Interview](https://github.com/qiu-deqing/FE-interview)
 - [如何面试 JS 开发工程师](http://www.zhihu.com/question/37441607)
 
-文章目录：
+## 文章目录
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
