@@ -67,7 +67,8 @@
     - [跨域的方法有哪些？实现原理是什么？兼容性如何？各自有什么缺点？](#%E8%B7%A8%E5%9F%9F%E7%9A%84%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%85%BC%E5%AE%B9%E6%80%A7%E5%A6%82%E4%BD%95%EF%BC%9F%E5%90%84%E8%87%AA%E6%9C%89%E4%BB%80%E4%B9%88%E7%BC%BA%E7%82%B9%EF%BC%9F)
     - [JSONP 如果页面编码和被请求的资源编码不一致如何处理](#jsonp-%E5%A6%82%E6%9E%9C%E9%A1%B5%E9%9D%A2%E7%BC%96%E7%A0%81%E5%92%8C%E8%A2%AB%E8%AF%B7%E6%B1%82%E7%9A%84%E8%B5%84%E6%BA%90%E7%BC%96%E7%A0%81%E4%B8%8D%E4%B8%80%E8%87%B4%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86)
   - [服务器端消息推送有哪些方法？实现原理？兼容性？缺点？](#%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B9%E6%B3%95%EF%BC%9F%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%EF%BC%9F%E5%85%BC%E5%AE%B9%E6%80%A7%EF%BC%9F%E7%BC%BA%E7%82%B9%EF%BC%9F)
-    - [jQuery.ready() 实际上是 DOM 中的什么事件？](#jqueryready-%E5%AE%9E%E9%99%85%E4%B8%8A%E6%98%AF-dom-%E4%B8%AD%E7%9A%84%E4%BB%80%E4%B9%88%E4%BA%8B%E4%BB%B6%EF%BC%9F)
+  - [jQuery.ready() 实际上是 DOM 中的什么事件？](#jqueryready-%E5%AE%9E%E9%99%85%E4%B8%8A%E6%98%AF-dom-%E4%B8%AD%E7%9A%84%E4%BB%80%E4%B9%88%E4%BA%8B%E4%BB%B6%EF%BC%9F)
+  - [`window.onload` 和 `$.ready()` 事件有什么区别？](#windowonload-%E5%92%8C-ready-%E4%BA%8B%E4%BB%B6%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F)
 - [前端性能优化](#%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
   - [雅虎 24 条，说出越多越好](#%E9%9B%85%E8%99%8E-24-%E6%9D%A1%EF%BC%8C%E8%AF%B4%E5%87%BA%E8%B6%8A%E5%A4%9A%E8%B6%8A%E5%A5%BD)
   - [是否有其他性能优化的经验？](#%E6%98%AF%E5%90%A6%E6%9C%89%E5%85%B6%E4%BB%96%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%9A%84%E7%BB%8F%E9%AA%8C%EF%BC%9F)
@@ -79,7 +80,9 @@
   - [XSS 的概念、知道哪些解决办法（常规的就行，不必太深入）](#xss-%E7%9A%84%E6%A6%82%E5%BF%B5%E3%80%81%E7%9F%A5%E9%81%93%E5%93%AA%E4%BA%9B%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%EF%BC%88%E5%B8%B8%E8%A7%84%E7%9A%84%E5%B0%B1%E8%A1%8C%EF%BC%8C%E4%B8%8D%E5%BF%85%E5%A4%AA%E6%B7%B1%E5%85%A5%EF%BC%89)
   - [`escape` / `encodeURI` / `encodeURIComponent` 的区别](#escape--encodeuri--encodeuricomponent-%E7%9A%84%E5%8C%BA%E5%88%AB)
   - [CSRF 攻击的概念、防御手段](#csrf-%E6%94%BB%E5%87%BB%E7%9A%84%E6%A6%82%E5%BF%B5%E3%80%81%E9%98%B2%E5%BE%A1%E6%89%8B%E6%AE%B5)
+  - [CSP](#csp)
   - [淘宝店铺装修的 CSS 过滤、JS 过滤有什么思路](#%E6%B7%98%E5%AE%9D%E5%BA%97%E9%93%BA%E8%A3%85%E4%BF%AE%E7%9A%84-css-%E8%BF%87%E6%BB%A4%E3%80%81js-%E8%BF%87%E6%BB%A4%E6%9C%89%E4%BB%80%E4%B9%88%E6%80%9D%E8%B7%AF)
+  - [代码质量](#%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F)
 - [后端](#%E5%90%8E%E7%AB%AF)
   - [讲讲 session 的实现原理，cookies 和 session 的关系，客户端禁用 cookies 后怎么使用 session？](#%E8%AE%B2%E8%AE%B2-session-%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%EF%BC%8Ccookies-%E5%92%8C-session-%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%8C%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%A6%81%E7%94%A8-cookies-%E5%90%8E%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8-session%EF%BC%9F)
   - [多台服务器之间该如何共享 session](#%E5%A4%9A%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B9%8B%E9%97%B4%E8%AF%A5%E5%A6%82%E4%BD%95%E5%85%B1%E4%BA%AB-session)
@@ -88,7 +91,6 @@
   - [callback hell 以及目前的解决方案](#callback-hell-%E4%BB%A5%E5%8F%8A%E7%9B%AE%E5%89%8D%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88)
   - [用过 koa 吗？thunk 是什么？（等 koa 2 正式版出来以后这个可以不用问了）](#%E7%94%A8%E8%BF%87-koa-%E5%90%97%EF%BC%9Fthunk-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%EF%BC%88%E7%AD%89-koa-2-%E6%AD%A3%E5%BC%8F%E7%89%88%E5%87%BA%E6%9D%A5%E4%BB%A5%E5%90%8E%E8%BF%99%E4%B8%AA%E5%8F%AF%E4%BB%A5%E4%B8%8D%E7%94%A8%E9%97%AE%E4%BA%86%EF%BC%89)
   - [什么是事件循环？Node 中有哪些类型的函数/调用是异步的？哪些是同步的？](#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%EF%BC%9Fnode-%E4%B8%AD%E6%9C%89%E5%93%AA%E4%BA%9B%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E6%98%AF%E5%BC%82%E6%AD%A5%E7%9A%84%EF%BC%9F%E5%93%AA%E4%BA%9B%E6%98%AF%E5%90%8C%E6%AD%A5%E7%9A%84%EF%BC%9F)
-  - [写过单元测试吗？用过什么库？](#%E5%86%99%E8%BF%87%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%90%97%EF%BC%9F%E7%94%A8%E8%BF%87%E4%BB%80%E4%B9%88%E5%BA%93%EF%BC%9F)
   - [怎样绑定 Node 程序到 80 端口[#绑定-node-程序到-80-端口]？](#%E6%80%8E%E6%A0%B7%E7%BB%91%E5%AE%9A-node-%E7%A8%8B%E5%BA%8F%E5%88%B0-80-%E7%AB%AF%E5%8F%A3%E7%BB%91%E5%AE%9A-node-%E7%A8%8B%E5%BA%8F%E5%88%B0-80-%E7%AB%AF%E5%8F%A3%EF%BC%9F)
   - [有哪些方法可以让 Node 程序遇到错误后自动重启](#%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E8%AE%A9-node-%E7%A8%8B%E5%BA%8F%E9%81%87%E5%88%B0%E9%94%99%E8%AF%AF%E5%90%8E%E8%87%AA%E5%8A%A8%E9%87%8D%E5%90%AF)
   - [如何实现一个 writable stream？](#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA-writable-stream%EF%BC%9F)
@@ -111,6 +113,7 @@
   - [cookies 是干嘛的，服务器和浏览器之间的 cookies 是怎么传的，httponly 的 cookies 和可读写的 cookie 有什么区别，有无长度限制，cookies 被禁用后可以考虑用什么替代](#cookies-%E6%98%AF%E5%B9%B2%E5%98%9B%E7%9A%84%EF%BC%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B9%8B%E9%97%B4%E7%9A%84-cookies-%E6%98%AF%E6%80%8E%E4%B9%88%E4%BC%A0%E7%9A%84%EF%BC%8Chttponly-%E7%9A%84-cookies-%E5%92%8C%E5%8F%AF%E8%AF%BB%E5%86%99%E7%9A%84-cookie-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%8C%E6%9C%89%E6%97%A0%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6%EF%BC%8Ccookies-%E8%A2%AB%E7%A6%81%E7%94%A8%E5%90%8E%E5%8F%AF%E4%BB%A5%E8%80%83%E8%99%91%E7%94%A8%E4%BB%80%E4%B9%88%E6%9B%BF%E4%BB%A3)
   - [GET/POST 区别](#getpost-%E5%8C%BA%E5%88%AB)
   - [一个页面从输入 URL 到页面加载完的过程中都发生了什么事情？越详细越好](#%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%BB%8E%E8%BE%93%E5%85%A5-url-%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E5%AE%8C%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%83%BD%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88%E4%BA%8B%E6%83%85%EF%BC%9F%E8%B6%8A%E8%AF%A6%E7%BB%86%E8%B6%8A%E5%A5%BD)
+  - [关于 HTTP2 知道哪些？对未来前端开发可能会有哪些影响？](#%E5%85%B3%E4%BA%8E-http2-%E7%9F%A5%E9%81%93%E5%93%AA%E4%BA%9B%EF%BC%9F%E5%AF%B9%E6%9C%AA%E6%9D%A5%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%8F%AF%E8%83%BD%E4%BC%9A%E6%9C%89%E5%93%AA%E4%BA%9B%E5%BD%B1%E5%93%8D%EF%BC%9F)
 - [其他](#%E5%85%B6%E4%BB%96)
   - [会不会用 ps 扣图，png、jpg、gif 这些图片格式解释一下，分别什么时候用。是否了解webp](#%E4%BC%9A%E4%B8%8D%E4%BC%9A%E7%94%A8-ps-%E6%89%A3%E5%9B%BE%EF%BC%8Cpng%E3%80%81jpg%E3%80%81gif-%E8%BF%99%E4%BA%9B%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%8B%EF%BC%8C%E5%88%86%E5%88%AB%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E7%94%A8%E3%80%82%E6%98%AF%E5%90%A6%E4%BA%86%E8%A7%A3webp)
   - [是否了解开源的工具 bower、npm、yeoman、grunt、gulp、webpack，有无用过，有无写过，一个 npm 的包里的 package.json 具备的必要的字段都有哪些（名称、版本号，依赖）](#%E6%98%AF%E5%90%A6%E4%BA%86%E8%A7%A3%E5%BC%80%E6%BA%90%E7%9A%84%E5%B7%A5%E5%85%B7-bower%E3%80%81npm%E3%80%81yeoman%E3%80%81grunt%E3%80%81gulp%E3%80%81webpack%EF%BC%8C%E6%9C%89%E6%97%A0%E7%94%A8%E8%BF%87%EF%BC%8C%E6%9C%89%E6%97%A0%E5%86%99%E8%BF%87%EF%BC%8C%E4%B8%80%E4%B8%AA-npm-%E7%9A%84%E5%8C%85%E9%87%8C%E7%9A%84-packagejson-%E5%85%B7%E5%A4%87%E7%9A%84%E5%BF%85%E8%A6%81%E7%9A%84%E5%AD%97%E6%AE%B5%E9%83%BD%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%88%E5%90%8D%E7%A7%B0%E3%80%81%E7%89%88%E6%9C%AC%E5%8F%B7%EF%BC%8C%E4%BE%9D%E8%B5%96%EF%BC%89)
@@ -170,7 +173,11 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 
 ### 常见的 meta 标签有哪些？移动端呢？
 
-可以参考 FEX 的[这篇文章](http://fex.baidu.com/blog/2014/10/html-head-tags/)，不过其中有部分已经过时了，比如 `viewport` 的 `minimal-ui` 属性在 iOS 8 中已经被去掉了
+- [常用的 HTML 头部标签](https://github.com/yisibl/blog/issues/1)
+- [COMPLETE LIST OF HTML META TAGS](http://code.lancepollard.com/complete-list-of-html-meta-tags/)
+- [微博元标记 Weibo Meta Tags](http://open.weibo.com/wiki/Weibo_meta_tag)
+
+[标签书写的顺序](https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/html.md#the-order-of-the-title-and-meta-tags)
 
 ### 关于 HTML 语义化知道哪些？
 
@@ -178,12 +185,40 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 
 ### 是否有关注 HTML 标准的演进？比较关注哪些方面？能否举一些例子？
 
+- [W3C HTML5 标准](http://www.w3.org/html/)
+- [WHATWG HTML 动态标准](https://whatwg.org/)
+- [public-html@w3.org mailing list](https://lists.w3.org/Archives/Public/public-html/w)
+
 
 ## CSS
 
 ### CSS 有几种引入方式？各自的优缺点？
 
+1. 内嵌 `<style> div { /*...*/ }</style>`
+
+优点：方便直观
+缺点：只能用于单个页面不利于扩展；没有做到样式与内容分离
+
+2. 外部引入 `<link rel="stylesheet" href="..."/>`
+
+优点：样式较多的时候易于维护；可复用
+缺点：浏览器缓存，通过在构建阶段给文件名加 hash 解决
+
+3. `@import url(...)`
+
+优点：比较易于建立起样式文件之间的逻辑联系，易于阅读
+缺点：串行加载，影响网页加载速度。建议在 less/SCSS 源码中使用 import 但是在构建阶段输出成单个文件
+
+4. 内联样式 `<span style="color: red"></span>`
+
+优点：优先级最高，确保能生效；不用写选择器
+缺点：不易维护；不易扩展
+
 ### 不同浏览器上的默认样式，如何处理？（normalize/sanitize）
+
+1. [reset.css](http://meyerweb.com/eric/tools/css/reset/) 去除所有默认样式
+2. [normalize.css](https://necolas.github.io/normalize.css/) 尽量使用浏览器默认样式，对于有差异的部分进行统一
+3. [sanitize.css](https://10up.github.io/sanitize.css/) 宣称是「更符合程序员直觉」的样式重置
 
 ### 盒模型、IE 6/7 与现代浏览器的区别、如何兼容
 
@@ -222,11 +257,13 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 
 ### JavaScript 有哪些基本类型
 
-根据 ES 2015 标准，JavaScript 的基本类型一共有 7 种，分别是 Undefined、Null、Boolean、String、Symbol、Number 以及 Object，其中 Symbol 是 ES 2015 标准中新增的基本类型。
+根据 ES2015 标准，JavaScript 的基本类型一共有 7 种，分别是 Undefined、Null、Boolean、String、Symbol、Number 以及 Object，其中 Symbol 是 ES2015 标准中新增的基本类型。
 
 ### 区分不同类型的方法有哪些，各有什么问题
 
 ### 闭包的概念 & 用途
+
+[Javascript Closures](http://www.jibbering.com/faq/notes/closures/)
 
 ### `apply` 和 `call` 的用途和区别
 
@@ -237,6 +274,8 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 ### 是否碰到过内存泄露？能否说一下引起内存泄露的常见原因（网上大部分文章都是跟 IE 相关的，其实没什么必要了解，闭包方面有必要知道）？有什么工具可以调试？
 
 ### JavaScript 设计模式知道哪些？Proxy 模式怎么用？
+
+[Learning JavaScript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/)
 
 ### ES6 是否有了解
 
@@ -265,7 +304,13 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 
 [关于web通信技术](http://www.tony77.com/archives/431.html)
 
-#### jQuery.ready() 实际上是 DOM 中的什么事件？
+### jQuery.ready() 实际上是 DOM 中的什么事件？
+
+一般是 `DOMContentLoaded` 事件，不支持时用 `load` 替代
+
+### `window.onload` 和 `$.ready()` 事件有什么区别？
+
+前者是整个网页的所有资源都加载完毕时才触发（包括图片等静态资源），后者在 DOM 树构建完成时就被触发。
 
 
 ## 前端性能优化
@@ -292,7 +337,13 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 
 ### CSRF 攻击的概念、防御手段
 
+### CSP
+
 ### 淘宝店铺装修的 CSS 过滤、JS 过滤有什么思路
+
+### 代码质量
+
+主要考察对代码质量检查、单元测试、自动化测试、界面测试、持续集成、持续部署这些理念的概念掌握以及实践
 
 
 ## 后端
@@ -311,8 +362,6 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 ### 用过 koa 吗？thunk 是什么？（等 koa 2 正式版出来以后这个可以不用问了）
 
 ### 什么是事件循环？Node 中有哪些类型的函数/调用是异步的？哪些是同步的？
-
-### 写过单元测试吗？用过什么库？
 
 ### 怎样绑定 Node 程序到 80 端口[#绑定-node-程序到-80-端口]？
 
@@ -354,6 +403,8 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 ### GET/POST 区别
 
 ### 一个页面从输入 URL 到页面加载完的过程中都发生了什么事情？越详细越好
+
+### 关于 HTTP2 知道哪些？对未来前端开发可能会有哪些影响？
 
 
 ## 其他
@@ -404,6 +455,9 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 
 ### 一小时之内写一个扫雷游戏
 
+来源：<http://rkoutnik.com/articles/How-I-Interview.html>
+
+思路/代码：<http://waitingfortheelevator.com/html-5-minesweeper-in-an-hour/>
 
 ## 代码实现思路
 
@@ -425,6 +479,7 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 ### LeetCode
 
 <https://leetcode.com/>
+
 [《LeetCode 题解》](https://www.gitbook.com/book/siddontang/leetcode-solution/details) 这本电子书中有很详尽的 C++ 版本的题解。
 
 ### careercup
