@@ -324,14 +324,27 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 
 ### 页面性能一般可以有哪些指标
 
+- 首字节时间
+- 白屏时间
+- 首屏时间
+- 用户可操作时间
+- 总下载时间
+
 ### 页面性能记录和分析有哪些方法？除了常见的那些方法之外在现代浏览器里还有其他什么新手段吗？
+
+[7 天打造前端性能监控系统](http://fex.baidu.com/blog/2014/05/build-performance-monitor-in-7-days/)
+
+Navigation Timing API 的支持程度现在已经很广泛了，大部分性能监控系统其实都已经在广泛使用……
 
 ### 用过什么性能分析的工具
 
+前一个问题回答的链接里有
 
 ## 前端安全
 
 ### XSS 的概念、知道哪些解决办法（常规的就行，不必太深入）
+
+[XSS零碎指南](http://www.barretlee.com/blog/2014/05/01/cb-xss-snippets/)
 
 ### `escape` / `encodeURI` / `encodeURIComponent` 的区别
 
