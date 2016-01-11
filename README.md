@@ -252,6 +252,8 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 
 ### 随便谈谈 CSS 工程化
 
+[CSS STILL SUCKS 2015](http://huangxuan.me/css-sucks-2015/#/)
+
 
 ## JavaScript
 
@@ -279,7 +281,24 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 
 ### ES6 是否有了解
 
+- 基础
+    + [ECMAScript 6入门](http://es6.ruanyifeng.com/)
+    + [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read)
+- 深入
+    + [Exploring ES6](http://exploringjs.com/)
+
 ### JavaScript 模块化（常见规范、工具、实现原理）
+
+- 规范 & 工具
+    + [JavaScript 模块化七日谈](http://huangxuan.me/2015/07/09/js-module-7day/)
+- 实现原理
+    + [玩转AMD - 设计思路](http://efe.baidu.com/blog/dissecting-amd-what/)
+    + [玩转AMD - 应用实践](http://efe.baidu.com/blog/dissecting-amd-how/)
+    + [玩转AMD - Loader](http://efe.baidu.com/blog/dissecting-amd-loader/)
+    + [easy.js的模块加载器的详解](http://stylechen.com/easyjs-moduleloader.html)
+    + [模块加载器的进化–并行加载](http://stylechen.com/easyjs-parallel-moduleloader.html)
+    + [如何实现一个 CMD 模块加载器](http://annn.me/how-to-realize-cmd-loader/)
+
 
 
 ## DOM
