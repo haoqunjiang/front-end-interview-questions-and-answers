@@ -185,8 +185,7 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 
 ### 是否有关注 HTML 标准的演进？比较关注哪些方面？能否举一些例子？
 
-- [W3C HTML5 标准](http://www.w3.org/html/)
-- [WHATWG HTML 动态标准](https://whatwg.org/)
+- [WHATWG HTML 动态标准](https://whatwg.org/)，不推荐阅读[W3C HTML5 标准](http://www.w3.org/html/)，原因可以看 WHATWG 成员 Anne van Kesteren 的[这篇文章](https://annevankesteren.nl/2016/01/film-at-11)
 - [public-html@w3.org mailing list](https://lists.w3.org/Archives/Public/public-html/w)
 
 
