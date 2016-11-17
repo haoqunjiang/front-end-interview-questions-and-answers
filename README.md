@@ -56,10 +56,11 @@
   - [ES6 是否有了解](#es6-%E6%98%AF%E5%90%A6%E6%9C%89%E4%BA%86%E8%A7%A3)
   - [JavaScript 模块化（常见规范、工具、实现原理）](#javascript-%E6%A8%A1%E5%9D%97%E5%8C%96%EF%BC%88%E5%B8%B8%E8%A7%81%E8%A7%84%E8%8C%83%E3%80%81%E5%B7%A5%E5%85%B7%E3%80%81%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%EF%BC%89)
 - [DOM](#dom)
+  - [attribute 和 property 的区别](#attribute-%E5%92%8C-property-%E7%9A%84%E5%8C%BA%E5%88%AB)
   - [DOM 的事件机制](#dom-%E7%9A%84%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6)
     - [冒泡与捕获的概念，如何阻止冒泡](#%E5%86%92%E6%B3%A1%E4%B8%8E%E6%8D%95%E8%8E%B7%E7%9A%84%E6%A6%82%E5%BF%B5%EF%BC%8C%E5%A6%82%E4%BD%95%E9%98%BB%E6%AD%A2%E5%86%92%E6%B3%A1)
     - [Delegation](#delegation)
-    - [鼠标点击 a 标签其中会有多少个时间产生](#%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB-a-%E6%A0%87%E7%AD%BE%E5%85%B6%E4%B8%AD%E4%BC%9A%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA%E6%97%B6%E9%97%B4%E4%BA%A7%E7%94%9F)
+    - [鼠标点击 a 标签其中会有多少个事件产生](#%E9%BC%A0%E6%A0%87%E7%82%B9%E5%87%BB-a-%E6%A0%87%E7%AD%BE%E5%85%B6%E4%B8%AD%E4%BC%9A%E6%9C%89%E5%A4%9A%E5%B0%91%E4%B8%AA%E4%BA%8B%E4%BB%B6%E4%BA%A7%E7%94%9F)
     - [如何区分 dbclick 和 click](#%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86-dbclick-%E5%92%8C-click)
   - [ajax 请求中 readyState 有哪些状态（这个问题我感觉太不常考了……但既然见到过那就收录进来了）](#ajax-%E8%AF%B7%E6%B1%82%E4%B8%AD-readystate-%E6%9C%89%E5%93%AA%E4%BA%9B%E7%8A%B6%E6%80%81%EF%BC%88%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98%E6%88%91%E6%84%9F%E8%A7%89%E5%A4%AA%E4%B8%8D%E5%B8%B8%E8%80%83%E4%BA%86%E2%80%A6%E2%80%A6%E4%BD%86%E6%97%A2%E7%84%B6%E8%A7%81%E5%88%B0%E8%BF%87%E9%82%A3%E5%B0%B1%E6%94%B6%E5%BD%95%E8%BF%9B%E6%9D%A5%E4%BA%86%EF%BC%89)
   - [ajax 跨域](#ajax-%E8%B7%A8%E5%9F%9F)
@@ -156,6 +157,8 @@
 
 ### DOCTYPE 声明的作用、取值与区别
 
+（目前来说，这个知识点的重要程度正在逐渐降低中，不过作为前端开发者还是有必要做一下了解的，但没必要深入探究了。）
+
 [HTML 4.01 和 XHTML 都基于 SMGL](http://www.w3.org/TR/REC-html40/intro/sgmltut.html)，所以需要在文档开头声明引用一个 DTD。
 
 在 HTML 5 中，DOCTYPE 不区分大小写；不过对于 XHTML、[Polyglot HTML](http://www.w3.org/TR/html-polyglot/)，`DOCTYPE` 这几个字母需要大写。
@@ -182,6 +185,7 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 ### 关于 HTML 语义化知道哪些？
 
 [HTML5 Doctor](http://html5doctor.com/)
+<https://justineo.github.io/slideshows/semantic-html/#/>
 
 ### 是否有关注 HTML 标准的演进？比较关注哪些方面？能否举一些例子？
 
@@ -190,6 +194,8 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 
 
 ## CSS
+
+建议先看一下 [Writing CSS the Right Way](https://justineo.github.io/slideshows/writing-css/) 补一下基础知识。
 
 ### CSS 有几种引入方式？各自的优缺点？
 
@@ -302,10 +308,11 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 
 ## DOM
 
+### attribute 和 property 的区别
 ### DOM 的事件机制
 #### 冒泡与捕获的概念，如何阻止冒泡
 #### Delegation
-#### 鼠标点击 a 标签其中会有多少个时间产生
+#### 鼠标点击 a 标签其中会有多少个事件产生
 #### 如何区分 dbclick 和 click
 
 ### ajax 请求中 readyState 有哪些状态（这个问题我感觉太不常考了……但既然见到过那就收录进来了）
@@ -329,7 +336,6 @@ strict 模式禁止所有 presetational or deprecated elements（例如 font 标
 ### `window.onload` 和 `$.ready()` 事件有什么区别？
 
 前者是整个网页的所有资源都加载完毕时才触发（包括图片等静态资源），后者在 DOM 树构建完成时就被触发。
-
 
 ## 前端性能优化
 
@@ -496,6 +502,14 @@ Navigation Timing API 的支持程度现在已经很广泛了，大部分性能�
 
 ### Sizzles （jQuery 的选择器模块）的实现思路
 
+### 实现一个简单的 MySQL ORM 模块
+
+### 实现一个简单的 Redis Session 中间件
+
+### 使用 net 模块实现一个简单的 HTTP 客户端
+
+### 实现一个简单的测试单元框架
+
 
 ## 算法题
 
@@ -514,3 +528,10 @@ Navigation Timing API 的支持程度现在已经很广泛了，大部分性能�
 [《LeetCode 题解》](https://www.gitbook.com/book/siddontang/leetcode-solution/details) 这本电子书中有很详尽的 C++ 版本的题解。
 
 ### careercup
+
+## 其他
+
+### 最满意的前端作品？
+### 最近在关注什么新技术？
+### 最近看的一篇技术文章？
+
